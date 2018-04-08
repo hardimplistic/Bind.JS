@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bind.JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .className{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+	<div id="test">
+
+    </div>
+
+</body>
+<script src="jquery.js"></script>
+<script src="bind.js"></script>
+<script>
+
+    var form = [];
+
+    $(function () {
+        var text = $.bind.createText({
+            name: 'text',
+            value: '100',
+            className: 'className'
+        });
+        form.push(text);
+        text.value = 200;
+
+        var textarea = $.bind.createTextArea({
+            name: 'textarea',
+            value: '1000',
+            className: 'className'
+        });
+        form.push(textarea);
+        textarea.value = 2000;
+
+        // 添加到画面
+        form.forEach(function(m) {
+            $('#test').append(m.element);
+        });
+
+    });
+</script>
+</html>
