@@ -13,39 +13,39 @@
 
 <body>
 
-	<div id="test">
-
-    </div>
+	<form id="test" name="form">
+        <input type="text" id="username" name="username">
+    </form>
 
 </body>
 <script src="jquery.js"></script>
 <script src="bind.js"></script>
 <script>
-
-    var form = [];
-
-    $(function () {
-        var text = $.bind.createText({
-            name: 'text',
-            value: '100',
-            className: 'className'
-        });
-        form.push(text);
-        text.value = 200;
-
-        var textarea = $.bind.createTextArea({
-            name: 'textarea',
-            value: '1000',
-            className: 'className'
-        });
-        form.push(textarea);
-        textarea.value = 2000;
-
-        // 添加到画面
-        form.forEach(function(m) {
-            $('#test').append(m.element);
-        });
-
-    });
+    // var form = [];
+    // $(function () {
+    //     // var text = $.bind.createText({
+    //     //     name: 'text',
+    //     //     value: '100',
+    //     //     className: 'className'
+    //     // });
+    //     // form.push(text);
+    //     // text.value = 200;
+    //     //
+    //     // var textarea = $.bind.createTextArea({
+    //     //     name: 'textarea',
+    //     //     value: '1000',
+    //     //     className: 'className'
+    //     // });
+    //     // form.push(textarea);
+    //     // textarea.value = 2000;
+    //     //
+    //     // // 添加到画面
+    //     // form.forEach(function(m) {
+    //     //     $('#test').append(m.element);
+    //     // });
+    // });
+    var username = $.bind.input(document.getElementById('username'));
+    username.value = '32132132';
+    username.element.style.width = '300px';
 </script>
 </html>
